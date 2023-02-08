@@ -3,7 +3,7 @@ import GameMain from "./components/GameMain";
 import RefreshButton from "./components/RefreshButton";
 import Score from "./components/Score";
 
-function App(props) {
+function App() {
     return (
         <div style={{textAlign: 'center'}}>
             <Score />

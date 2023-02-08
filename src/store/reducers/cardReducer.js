@@ -1,30 +1,4 @@
-const initialState = {
-    cards: [
-        {id: 1, done: false, isOpen: false, title: '🔥'},
-        {id: 2, done: false, isOpen: false, title: '😜'},
-        {id: 3, done: false, isOpen: false, title: '🤬'},
-        {id: 4, done: false, isOpen: false, title: '🤡'},
-        {id: 5, done: false, isOpen: false, title: '💩'},
-        {id: 6, done: false, isOpen: false, title: '🤡'},
-        {id: 7, done: false, isOpen: false, title: '🔥'},
-        {id: 8, done: false, isOpen: false, title: '🐸'},
-        {id: 9, done: false, isOpen: false, title: '💩'},
-        {id: 10, done: false, isOpen: false, title: '✊'},
-        {id: 11, done: false, isOpen: false, title: '😜'},
-        {id: 12, done: false, isOpen: false, title: '👨‍👩‍👧'},
-        {id: 13, done: false, isOpen: false, title: '🐸'},
-        {id: 14, done: false, isOpen: false, title: '🤬'},
-        {id: 15, done: false, isOpen: false, title: '👨‍👩‍👧'},
-        {id: 16, done: false, isOpen: false, title: '🚚'},
-        {id: 17, done: false, isOpen: false, title: '👻'},
-        {id: 18, done: false, isOpen: false, title: '🚚'},
-        {id: 19, done: false, isOpen: false, title: '👻'},
-        {id: 20, done: false, isOpen: false, title: '✊'},
-    ],
-    counter: 0,
-    isLose: false,
-    isWin: false,
-}
+import {initialState} from "./initialState";
 
 export const cardReducer = (state = initialState, action) => {
     switch (action.type) {
@@ -64,7 +38,8 @@ export const cardReducer = (state = initialState, action) => {
                     {...el}
                 )],
                 counter: state.counter = 0,
-                isLose: false
+                isLose: false,
+                level: 1
             }
         case "LOSE_GAME":
             return {
@@ -77,6 +52,52 @@ export const cardReducer = (state = initialState, action) => {
                 )],
                 counter: state.counter = 0,
                 isLose: action.payload,
+            }
+        case "WIN_GAME":
+            return {
+                ...state,
+                cards: [...state.cards.map(el => el.isOpen === true || el.done === true
+                    ?
+                    {...el, isOpen: false, done: false}
+                    :
+                    {...el}
+                )],
+                counter: state.counter = 0,
+                isWin: action.payload,
+            }
+        case "CHANGE_LEVEL":
+            return {
+                ...state,
+                cards: [...state.cards.map(el => el.isOpen === true || el.done === true
+                    ?
+                    {...el, isOpen: false, done: false}
+                    :
+                    {...el}
+                )],
+                isWin: action.payload,
+                level: state.level + 1,
+            }
+        case "NEW_CARDS_OPEN":
+            return {
+                ...state,
+                newCards: [...state.cards.map(el => el.isOpen === false
+                    ?
+                    {...el, isOpen: action.payload}
+                    :
+                    {...el}
+                )],
+
+            }
+        case "NEW_CARDS_CLOSED":
+            return {
+                ...state,
+                newCards: [...state.cards.map(el => el.isOpen === true
+                    ?
+                    {...el, isOpen: action.payload}
+                    :
+                    {...el}
+                )],
+
             }
         default:
             return state
