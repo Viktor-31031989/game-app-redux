@@ -20,7 +20,10 @@ const initialState = {
         {id: 18, done: false, isOpen: false, title: '🚚'},
         {id: 19, done: false, isOpen: false, title: '👻'},
         {id: 20, done: false, isOpen: false, title: '✊'},
-    ]
+    ],
+    counter: 0,
+    isLose: false,
+    isWin: false,
 }
 
 export const cardReducer = (state = initialState, action) => {
@@ -28,7 +31,8 @@ export const cardReducer = (state = initialState, action) => {
         case "CHOOSE_CARD":
             return {
                 ...state,
-                cards: [...state.cards.map(el => el.id === action.payload ? {...el, isOpen: true} : {...el})]
+                cards: [...state.cards.map(el => el.id === action.payload ? {...el, isOpen: true} : {...el})],
+                counter: state.counter + 1,
             }
         case "CHANGE_STATE":
             return {
@@ -49,6 +53,30 @@ export const cardReducer = (state = initialState, action) => {
                     :
                     {...el}
                 )]
+            }
+        case 'REFRESH':
+            return {
+                ...state,
+                cards: [...state.cards.map(el => el.isOpen === true || el.done === true
+                    ?
+                    {...el, isOpen: false, done: false}
+                    :
+                    {...el}
+                )],
+                counter: state.counter = 0,
+                isLose: false
+            }
+        case "LOSE_GAME":
+            return {
+                ...state,
+                cards: [...state.cards.map(el => el.isOpen === true || el.done === true
+                    ?
+                    {...el, isOpen: false, done: false}
+                    :
+                    {...el}
+                )],
+                counter: state.counter = 0,
+                isLose: action.payload,
             }
         default:
             return state

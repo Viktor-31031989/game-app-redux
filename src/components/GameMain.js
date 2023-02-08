@@ -32,6 +32,7 @@ useEffect(()=>{
         <div style={{
             display: "grid",
             gridTemplateColumns: 'auto auto auto auto',
+            gap: '4px',
             margin: '200px 30px 0 30px',
             maxWidth: '350px'
         }}>
