@@ -5,12 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ec38b881-59b5-4d59-92f0-144b9037720b" name="Changes" comment="almost done">
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/initialState.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CardTable.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CardTable.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/GameMain.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/GameMain.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Score.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Score.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/cardReducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/cardReducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,7 +69,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1675280144283</updated>
-      <workItem from="1675280145520" duration="39408000" />
+      <workItem from="1675280145520" duration="39884000" />
     </task>
     <task id="LOCAL-00001" summary="almost done">
       <created>1675459471517</created>
@@ -88,7 +85,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675818194367</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="almost done">
+      <created>1675835275398</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1675835275398</updated>
+    </task>
+    <task id="LOCAL-00004" summary="almost done">
+      <created>1675835444968</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1675835444968</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -12,7 +12,7 @@ function CardTable({card, dispatch, state}) {
                 newCardsClose()
             }, 1000)
         }
-    }, []);
+    });
 
     const newCardsOpen =()=>{
        return dispatch({type: 'NEW_CARDS_OPEN', payload: true })

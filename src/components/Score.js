@@ -8,7 +8,7 @@ function Score() {
     useEffect(() => {
         winHandler()
         loseHandler()
-    }, [state])
+    })
 
     useEffect(() => {
         if(state.isWin) {
@@ -16,7 +16,7 @@ function Score() {
                 levelChanger()
             }, 600)
         }
-    }, [state])
+    })
 
     const winHandler = () => {
         const result = state.cards.filter(el => el.done)

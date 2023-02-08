@@ -10,11 +10,10 @@ function GameMain() {
         setTimeout(() => {
             isOpenHandler()
         }, 500)
-    }, [state])
+    })
     const isOpenHandler = () => {
         const cardCounter = state.cards.filter(el => el.isOpen === true)
         if (cardCounter.length < 2) {
-            return
         } else if (cardCounter.length === 2 && cardCounter[0].title === cardCounter[1].title) {
             const oneId = cardCounter[0].id
             const twoId = cardCounter[1].id
